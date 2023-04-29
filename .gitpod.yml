@@ -8,7 +8,12 @@ tasks:
       unzip awscliv2.zip
       sudo ./aws/install
       cd $THEIA_WORKSPACE_ROOT
-      
+
+  - name: react-js 
+    command: 
+      cd frontend-react-js 
+      npm i       
+
   - name: postgres
     init: |
       curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
@@ -17,15 +22,6 @@ tasks:
       sudo apt install -y postgresql-client-13 libpq-dev
       exit
 
-  - name: npm-install
-    init: |
-      cd /workspace/aws-bootcamp-cruddur-2023/frontend-react-js
-      npm i
-      exit 
-  - name: react-js 
-    command: 
-      cd frontend-react-js 
-      npm i 
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
